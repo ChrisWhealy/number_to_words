@@ -26,7 +26,7 @@ then you can run `./bin/numbers_to_words <some-number>`
 
 ```shell
 ╰→  ./bin/numbers_to_words 17942  
-seventeen thousand, nine hundred and forty-two
+seventeen thousand nine hundred and forty-two
 ╰→  ./bin/numbers_to_words 918273645
 nine hundred and eighteen million two hundred and seventy three thousand six hundred and forty five
 ```
