@@ -6,7 +6,7 @@ use utils::number_to_text;
 const LOWER_LIMIT: i32 = 0;
 const UPPER_LIMIT: i32 = 999999999;
 
-fn exit_with_msg_and_code(exit_code: ExitCode) -> impl Fn(&str) -> ExitCode {
+fn exit_with_code_and_msg(exit_code: ExitCode) -> impl Fn(&str) -> ExitCode {
     move |msg| {
         println!("{}", msg);
         exit_code
@@ -15,8 +15,8 @@ fn exit_with_msg_and_code(exit_code: ExitCode) -> impl Fn(&str) -> ExitCode {
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 fn main() -> ExitCode {
-    let exit_with_success = exit_with_msg_and_code(ExitCode::from(0));
-    let exit_with_error = exit_with_msg_and_code(ExitCode::from(1));
+    let exit_with_success = exit_with_code_and_msg(ExitCode::from(0));
+    let exit_with_error = exit_with_code_and_msg(ExitCode::from(1));
     let args: Vec<_> = env::args().collect();
 
     if args.len() != 2 {
